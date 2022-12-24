@@ -5,7 +5,6 @@ Friend Module InPlayProcessor
         Do
             AnsiConsole.Clear()
             'TODO: messages
-            AnsiConsole.MarkupLine("Yer totally playing the game!") 'TODO: this line goes away
             Dim prompt As New SelectionPrompt(Of String) With {.Title = NowWhatTitle}
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
