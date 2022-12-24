@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>BOS.Business</RootNamespace>
+    <RootNamespace>SRPG.Business</RootNamespace>
     <TargetFramework>netstandard2.1</TargetFramework>
     <OptionStrict>On</OptionStrict>
-    <ImportedNamespaces>SRPG.Business=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,BOS.Business=True</ImportedNamespaces>
+    <ImportedNamespaces>SRPG.Data=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,SRPG.Business=True</ImportedNamespaces>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,11 +16,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SRPG.Business\SRPG.Business.vbproj" />
+    <ProjectReference Include="..\SRPG.Data\SRPG.Data.vbproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Import Include="SRPG.Business" />
+    <Import Include="SRPG.Data" />
   </ItemGroup>
 
 </Project>
