@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BlightOfSPLORR", "BlightOfSPLORR\BlightOfSPLORR.vbproj", "{E1095F91-6B7F-47A8-9971-07DDBF8A3C6B}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SPLORR.Game", "SPLORR.Game\SPLORR.Game.vbproj", "{6107A315-1044-428A-8BC8-2F83B1D71B1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1095F91-6B7F-47A8-9971-07DDBF8A3C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1095F91-6B7F-47A8-9971-07DDBF8A3C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1095F91-6B7F-47A8-9971-07DDBF8A3C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1095F91-6B7F-47A8-9971-07DDBF8A3C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6107A315-1044-428A-8BC8-2F83B1D71B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6107A315-1044-428A-8BC8-2F83B1D71B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6107A315-1044-428A-8BC8-2F83B1D71B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6107A315-1044-428A-8BC8-2F83B1D71B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {934A9EC9-1ABD-4967-8204-138C524C1CCC}
+	EndGlobalSection
+EndGlobal
