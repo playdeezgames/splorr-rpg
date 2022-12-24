@@ -2,11 +2,13 @@
     Friend Sub Run()
         Do
             AnsiConsole.Clear()
-            Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Main Menu:[/]"}
+            Dim prompt As New SelectionPrompt(Of String) With {.Title = MainMenuTitle}
             prompt.AddChoice(QuitText)
             Select Case AnsiConsole.Prompt(prompt)
                 Case QuitText
-                    Exit Do
+                    If ConfirmProcessor.Run(ConfirmQuitTitle) Then
+                        Exit Do
+                    End If
             End Select
         Loop
     End Sub
