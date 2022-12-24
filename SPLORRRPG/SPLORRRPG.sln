@@ -7,6 +7,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BlightOfSPLORR", "BlightOfS
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SPLORR.Game", "SPLORR.Game\SPLORR.Game.vbproj", "{6107A315-1044-428A-8BC8-2F83B1D71B1F}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SRPG.Data", "SRPG.Data\SRPG.Data.vbproj", "{5231A1B1-0988-4F00-B7FC-3253E8553846}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BOS.Business", "BOS.Business\BOS.Business.vbproj", "{4BC1DD40-5FD6-4078-9625-317AFF9F142B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{6107A315-1044-428A-8BC8-2F83B1D71B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6107A315-1044-428A-8BC8-2F83B1D71B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6107A315-1044-428A-8BC8-2F83B1D71B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5231A1B1-0988-4F00-B7FC-3253E8553846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5231A1B1-0988-4F00-B7FC-3253E8553846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5231A1B1-0988-4F00-B7FC-3253E8553846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5231A1B1-0988-4F00-B7FC-3253E8553846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC1DD40-5FD6-4078-9625-317AFF9F142B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC1DD40-5FD6-4078-9625-317AFF9F142B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC1DD40-5FD6-4078-9625-317AFF9F142B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC1DD40-5FD6-4078-9625-317AFF9F142B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
