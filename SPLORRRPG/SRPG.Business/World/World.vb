@@ -21,11 +21,22 @@
         End Set
     End Property
 
+    Public ReadOnly Property Directions As IEnumerable(Of IDirection) Implements IWorld.Directions
+        Get
+            Return _worldData.Directions.Keys.Select(Function(x) New Direction(_worldData, x))
+        End Get
+    End Property
+
     Public Shared Function Create(name As String) As IWorld
         Dim worldData = New WorldData
         Dim result = New World(worldData)
         CreateDirections(worldData)
+        Dim north = result.Directions.Single(Function(x) x.Name = "north")
+        Dim south = result.Directions.Single(Function(x) x.Name = "south")
         Dim startingLocation = CreateLocation(worldData, "Starting Location")
+        Dim nextLocation = CreateLocation(worldData, "Next Location")
+        Route.Create(worldData, startingLocation, north, nextLocation)
+        Route.Create(worldData, nextLocation, south, startingLocation)
         CreatePlayerCharacter(worldData, result, name, startingLocation)
         Return result
     End Function
