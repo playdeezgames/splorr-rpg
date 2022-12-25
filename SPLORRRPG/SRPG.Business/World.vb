@@ -21,15 +21,15 @@
         End Set
     End Property
 
-    Public Shared Function Create() As IWorld
+    Public Shared Function Create(name As String) As IWorld
         Dim worldData = New WorldData
         Dim result = New World(worldData)
-        CreatePlayerCharacter(worldData, result)
+        CreatePlayerCharacter(worldData, result, name)
         Return result
     End Function
 
-    Private Shared Function CreatePlayerCharacter(worldData As WorldData, world As World) As ICharacter
-        Dim result As ICharacter = Character.Create(worldData, "Tagon")
+    Private Shared Function CreatePlayerCharacter(worldData As WorldData, world As World, name As String) As ICharacter
+        Dim result As ICharacter = Character.Create(worldData, name)
         world.PlayerCharacter = result
         Return result
     End Function

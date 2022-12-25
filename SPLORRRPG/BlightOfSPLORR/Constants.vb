@@ -1,5 +1,7 @@
 ﻿Friend Module Constants
     Friend Const AbandonGameText = "Abandon Game"
+    Friend Const CharacterNamePrompt = "[olive]Character Name:[/]"
+    Friend Const CharacterNameDefault = "Tagon"
     Friend Const ConfirmAbandonGameTitle = "[red]Are you sure you want to abandon the game?[/]"
     Friend Const ConfirmQuitTitle = "[red]Are you sure you want to quit?[/]"
     Friend Const GameMenuTitle = "[olive]Game Menu:[/]"

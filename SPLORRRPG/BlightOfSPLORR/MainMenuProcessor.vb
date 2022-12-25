@@ -17,7 +17,8 @@
     End Sub
 
     Private Sub StartGame()
-        Dim world = SRPG.Business.World.Create()
+        Dim name = AnsiConsole.Ask(CharacterNamePrompt, CharacterNameDefault)
+        Dim world = SRPG.Business.World.Create(name)
         InPlayProcessor.Run(world)
     End Sub
 End Module
