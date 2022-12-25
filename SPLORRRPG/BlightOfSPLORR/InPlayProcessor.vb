@@ -4,8 +4,7 @@
             AnsiConsole.Clear()
             Dim character = world.PlayerCharacter
             ShowMessages(character)
-            AnsiConsole.MarkupLine($"Name: {character.Name}")
-            AnsiConsole.MarkupLine($"Location: {character.Location.Name}")
+            ShowLocation(character)
             Dim prompt As New SelectionPrompt(Of String) With {.Title = NowWhatTitle}
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
@@ -15,6 +14,18 @@
                     End If
             End Select
         Loop
+    End Sub
+
+    Private Sub ShowLocation(character As ICharacter)
+        AnsiConsole.MarkupLine($"Name: {character.Name}")
+        AnsiConsole.MarkupLine($"Location: {character.Location.Name}")
+        Dim routes = character.Location.Routes
+        If routes.Any Then
+            AnsiConsole.MarkupLine("Exits:")
+            For Each route In routes
+                AnsiConsole.MarkupLine($"- {route.Direction.Name}")
+            Next
+        End If
     End Sub
 
     Private Sub ShowMessages(character As ICharacter)
