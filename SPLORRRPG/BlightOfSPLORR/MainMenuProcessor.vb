@@ -1,6 +1,4 @@
-﻿Imports BOS.Business
-
-Friend Module MainMenuProcessor
+﻿Friend Module MainMenuProcessor
     Friend Sub Run()
         Do
             AnsiConsole.Clear()
@@ -19,7 +17,7 @@ Friend Module MainMenuProcessor
     End Sub
 
     Private Sub StartGame()
-        Dim world = BOSWorld.Create
+        Dim world = SRPG.Business.World.Create()
         InPlayProcessor.Run(world)
     End Sub
 End Module

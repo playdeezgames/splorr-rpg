@@ -1,7 +1,5 @@
-﻿Imports BOS.Business
-
-Friend Module InPlayProcessor
-    Friend Sub Run(world As IBOSWorld)
+﻿Friend Module InPlayProcessor
+    Friend Sub Run(world As IWorld)
         Do
             AnsiConsole.Clear()
             'TODO: messages

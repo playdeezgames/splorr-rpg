@@ -1,7 +1,5 @@
-﻿Imports BOS.Business
-
-Friend Module GameMenuProcessor
-    Friend Function Run(world As IBOSWorld) As Boolean
+﻿Friend Module GameMenuProcessor
+    Friend Function Run(world As IWorld) As Boolean
         Do
             Dim prompt As New SelectionPrompt(Of String) With {.Title = GameMenuTitle}
             prompt.AddChoice(NeverMindText)
