@@ -4,7 +4,8 @@
             AnsiConsole.Clear()
             Dim character = world.PlayerCharacter
             'TODO: messages
-            AnsiConsole.MarkupLine($"{character.Name} exists!")
+            AnsiConsole.MarkupLine($"Name: {character.Name}")
+            AnsiConsole.MarkupLine($"Location: {character.Location.Name}")
             Dim prompt As New SelectionPrompt(Of String) With {.Title = NowWhatTitle}
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)

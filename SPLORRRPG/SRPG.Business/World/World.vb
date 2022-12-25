@@ -25,7 +25,7 @@
         Dim worldData = New WorldData
         Dim result = New World(worldData)
         Dim startingLocation = CreateLocation(worldData, "Starting Location")
-        CreatePlayerCharacter(worldData, result, name)
+        CreatePlayerCharacter(worldData, result, name, startingLocation)
         Return result
     End Function
 
@@ -33,8 +33,8 @@
         Return Location.Create(worldData, name)
     End Function
 
-    Private Shared Function CreatePlayerCharacter(worldData As WorldData, world As World, name As String) As ICharacter
-        Dim result As ICharacter = Character.Create(worldData, name)
+    Private Shared Function CreatePlayerCharacter(worldData As WorldData, world As World, name As String, location As ILocation) As ICharacter
+        Dim result As ICharacter = Character.Create(worldData, name, location)
         world.PlayerCharacter = result
         Return result
     End Function
