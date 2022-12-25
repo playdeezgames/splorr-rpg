@@ -24,8 +24,13 @@
     Public Shared Function Create(name As String) As IWorld
         Dim worldData = New WorldData
         Dim result = New World(worldData)
+        Dim startingLocation = CreateLocation(worldData, "Starting Location")
         CreatePlayerCharacter(worldData, result, name)
         Return result
+    End Function
+
+    Private Shared Function CreateLocation(worldData As WorldData, name As String) As ILocation
+        Return Location.Create(worldData, name)
     End Function
 
     Private Shared Function CreatePlayerCharacter(worldData As WorldData, world As World, name As String) As ICharacter
