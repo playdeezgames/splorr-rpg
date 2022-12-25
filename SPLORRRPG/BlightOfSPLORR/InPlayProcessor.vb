@@ -2,7 +2,9 @@
     Friend Sub Run(world As IWorld)
         Do
             AnsiConsole.Clear()
+            Dim character = world.PlayerCharacter
             'TODO: messages
+            AnsiConsole.MarkupLine($"{character.Name} exists!")
             Dim prompt As New SelectionPrompt(Of String) With {.Title = NowWhatTitle}
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
