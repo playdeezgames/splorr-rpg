@@ -17,10 +17,38 @@
         End Get
     End Property
 
+    Public ReadOnly Property Messages As IEnumerable(Of String) Implements ICharacter.Messages
+        Get
+            If Not IsPlayerCharacter Then
+                Return Array.Empty(Of String)
+            End If
+            Return _worldData.Messages
+        End Get
+    End Property
+
+    Public Sub ClearMessages() Implements ICharacter.ClearMessages
+        If IsPlayerCharacter Then
+            _worldData.Messages.Clear()
+        End If
+    End Sub
+
+    Private ReadOnly Property IsPlayerCharacter As Boolean
+        Get
+            Return _worldData.PlayerCharacterId.HasValue AndAlso _worldData.PlayerCharacterId.Value = Id
+        End Get
+    End Property
+
+
     Friend Shared Function Create(worldData As WorldData, name As String, location As ILocation) As ICharacter
         Dim characterId = worldData.NextCharacterId
         worldData.Characters(characterId) = New CharacterData With {.Name = name, .LocationId = location.Id}
         worldData.Locations(location.Id).CharacterIds.Add(characterId)
         Return New Character(worldData, characterId)
     End Function
+
+    Public Sub AddMessage(message As String) Implements ICharacter.AddMessage
+        If IsPlayerCharacter Then
+            _worldData.Messages.Add(message)
+        End If
+    End Sub
 End Class

@@ -3,7 +3,7 @@
         Do
             AnsiConsole.Clear()
             Dim character = world.PlayerCharacter
-            'TODO: messages
+            ShowMessages(character)
             AnsiConsole.MarkupLine($"Name: {character.Name}")
             AnsiConsole.MarkupLine($"Location: {character.Location.Name}")
             Dim prompt As New SelectionPrompt(Of String) With {.Title = NowWhatTitle}
@@ -15,5 +15,12 @@
                     End If
             End Select
         Loop
+    End Sub
+
+    Private Sub ShowMessages(character As ICharacter)
+        For Each message In character.Messages
+            AnsiConsole.MarkupLine(message)
+        Next
+        character.ClearMessages()
     End Sub
 End Module

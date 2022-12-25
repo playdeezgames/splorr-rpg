@@ -36,6 +36,7 @@
     Private Shared Function CreatePlayerCharacter(worldData As WorldData, world As World, name As String, location As ILocation) As ICharacter
         Dim result As ICharacter = Character.Create(worldData, name, location)
         world.PlayerCharacter = result
+        result.AddMessage("Poof! The game begins!")
         Return result
     End Function
 End Class
