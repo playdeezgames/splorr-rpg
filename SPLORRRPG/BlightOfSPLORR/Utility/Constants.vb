@@ -8,6 +8,7 @@
     Friend Const GameMenuText = "Game Menu"
     Friend Const GameTitle = "Blight of SPLORR!!"
     Friend Const MainMenuTitle = "[olive]Main Menu[/]"
+    Friend Const MoveText = "Move"
     Friend Const NeverMindText = "Never Mind"
     Friend Const NoText = "No"
     Friend Const NowWhatTitle = "[olive]Now What?[/]"
