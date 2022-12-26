@@ -6,10 +6,9 @@
             ShowMessages(character)
             ShowLocation(character)
             Dim prompt As New SelectionPrompt(Of String) With {.Title = NowWhatTitle}
-            prompt.AddChoice(GameMenuText)
-            'TODO: add all of the verbs that are possible for the character at this time
             Dim table = character.AvailableVerbs.ToDictionary(Function(x) x.ChoiceText, Function(x) x)
             prompt.AddChoices(table.Keys)
+            prompt.AddChoice(GameMenuText)
             Dim answer = AnsiConsole.Prompt(prompt)
             Select Case answer
                 Case GameMenuText
