@@ -15,6 +15,7 @@
     Friend Const NowWhatTitle = "[olive]Now What?[/]"
     Friend Const OkText = "Ok"
     Friend Const QuitText = "Quit"
+    Friend Const StatusText = "Status"
     Friend Const StartGameText = "Start Game"
     Friend Const YesText = "Yes"
 End Module

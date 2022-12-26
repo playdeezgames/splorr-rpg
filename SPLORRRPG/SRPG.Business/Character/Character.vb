@@ -56,6 +56,12 @@
         End Get
     End Property
 
+    Public ReadOnly Property HasStatus(statusType As String) As Boolean Implements ICharacter.HasStatus
+        Get
+            Return _worldData.Characters(Id).Statuses.Contains(statusType)
+        End Get
+    End Property
+
     Friend Shared Function Create(worldData As WorldData, world As IWorld, name As String, location As ILocation) As ICharacter
         Dim characterId = worldData.NextCharacterId
         worldData.Characters(characterId) = New CharacterData With {.Name = name, .LocationId = location.Id}
@@ -67,5 +73,9 @@
         If IsPlayerCharacter Then
             _worldData.Messages.Add(message)
         End If
+    End Sub
+
+    Public Sub AddStatus(statusType As String) Implements ICharacter.AddStatus
+        _worldData.Characters(Id).Statuses.Add(statusType)
     End Sub
 End Class

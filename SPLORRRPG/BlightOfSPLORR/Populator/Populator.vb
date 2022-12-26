@@ -62,6 +62,7 @@ Friend Class Populator
 
     Private Shared Function CreatePlayerCharacter(worldData As WorldData, world As IWorld, name As String, location As ILocation) As ICharacter
         Dim result As ICharacter = CreateCharacter(worldData, world, name, location)
+        result.AddStatus(AliveStatus)
         world.PlayerCharacter = result
         result.AddMessage("Poof! The game begins!")
         Return result
