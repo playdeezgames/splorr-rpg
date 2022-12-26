@@ -38,6 +38,7 @@
     Public Shared Function Create(name As String, verbs As IReadOnlyList(Of IVerb)) As IWorld
         Dim worldData = New WorldData
         Dim result = New World(worldData, verbs)
+
         CreateDirections(worldData, result)
         Dim north = result.Directions.Single(Function(x) x.Name = "north")
         Dim south = result.Directions.Single(Function(x) x.Name = "south")
@@ -46,6 +47,7 @@
         Route.Create(worldData, result, startingLocation, north, nextLocation)
         Route.Create(worldData, result, nextLocation, south, startingLocation)
         CreatePlayerCharacter(worldData, result, name, startingLocation)
+
         Return result
     End Function
 

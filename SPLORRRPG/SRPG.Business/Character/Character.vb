@@ -11,10 +11,22 @@
         End Get
     End Property
 
-    Public ReadOnly Property Location As ILocation Implements ICharacter.Location
+    Public Property Location As ILocation Implements ICharacter.Location
         Get
+            If Not _worldData.Locations.ContainsKey(_worldData.Characters(Id).LocationId) Then
+                Return Nothing
+            End If
             Return New Location(_worldData, World, _worldData.Characters(Id).LocationId)
         End Get
+        Set(value As ILocation)
+            If _worldData.Locations.ContainsKey(_worldData.Characters(Id).LocationId) Then
+                _worldData.Locations(_worldData.Characters(Id).LocationId).CharacterIds.Remove(Id)
+            End If
+            _worldData.Characters(Id).LocationId = value.Id
+            If _worldData.Locations.ContainsKey(_worldData.Characters(Id).LocationId) Then
+                _worldData.Locations(_worldData.Characters(Id).LocationId).CharacterIds.Add(Id)
+            End If
+        End Set
     End Property
 
     Public ReadOnly Property Messages As IEnumerable(Of String) Implements ICharacter.Messages
@@ -32,7 +44,7 @@
         End If
     End Sub
 
-    Private ReadOnly Property IsPlayerCharacter As Boolean
+    Public ReadOnly Property IsPlayerCharacter As Boolean Implements ICharacter.IsPlayerCharacter
         Get
             Return _worldData.PlayerCharacterId.HasValue AndAlso _worldData.PlayerCharacterId.Value = Id
         End Get
