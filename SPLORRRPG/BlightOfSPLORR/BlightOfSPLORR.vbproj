@@ -5,7 +5,7 @@
     <RootNamespace>BlightOfSPLORR</RootNamespace>
     <TargetFramework>net6.0</TargetFramework>
     <OptionStrict>On</OptionStrict>
-    <ImportedNamespaces>Spectre.Console=False,SRPG.Business=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,BlightOfSPLORR=True</ImportedNamespaces>
+    <ImportedNamespaces>Spectre.Console=False,SPLORR.Game=False,SRPG.Business=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,BlightOfSPLORR=True</ImportedNamespaces>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,10 +22,12 @@
 
   <ItemGroup>
     <Import Include="Spectre.Console" />
+    <Import Include="SPLORR.Game" />
     <Import Include="SRPG.Business" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SPLORR.Game\SPLORR.Game.vbproj" />
     <ProjectReference Include="..\SRPG.Business\SRPG.Business.vbproj" />
   </ItemGroup>
 

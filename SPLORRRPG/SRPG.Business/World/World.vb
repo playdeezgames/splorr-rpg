@@ -35,6 +35,12 @@
         End Get
     End Property
 
+    Public ReadOnly Property DirectionByName(name As String) As IDirection Implements IWorld.DirectionByName
+        Get
+            Return Directions.SingleOrDefault(Function(x) x.Name = name)
+        End Get
+    End Property
+
     Public Shared Function Create(name As String, verbs As IReadOnlyList(Of IVerb), populator As IPopulator) As IWorld
         Dim worldData = New WorldData
         Dim result = New World(worldData, verbs)
